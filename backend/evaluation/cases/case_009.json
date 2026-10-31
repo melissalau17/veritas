@@ -1,0 +1,11 @@
+{
+  "id": "case_009",
+  "name": "Historical case with obsolete component",
+  "problem": "P-101 vibration investigation referencing historical coupling model replaced in 2024.",
+  "asset_id": "P-101",
+  "expected": {
+    "revision_conflict": true,
+    "diagnosis_allowed": false,
+    "applicability": "APPLICABLE WITH WARNING"
+  }
+}

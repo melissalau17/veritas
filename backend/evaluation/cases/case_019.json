@@ -1,0 +1,14 @@
+{
+  "id": "case_019",
+  "name": "Similar component / different asset",
+  "problem": "Coupling failure on P-205 used as reference for P-101 inspection.",
+  "asset_id": "P-101",
+  "expected": {
+    "applicability": "ANALOGOUS ONLY",
+    "warning_required": true
+  },
+  "target_source": "RCA-022.txt",
+  "active_documents": [
+    "RCA-022.txt"
+  ]
+}

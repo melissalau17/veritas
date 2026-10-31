@@ -1,0 +1,12 @@
+{
+  "id": "case_007",
+  "name": "Conflicting numeric limits",
+  "problem": "MNT-014 Rev 2 specifies 0.15 mm maximum offset while Rev 4 specifies 0.08 mm.",
+  "asset_id": "P-101",
+  "expected": {
+    "revision_conflict": true,
+    "numeric_conflict": true,
+    "old_value": "0.15 mm",
+    "new_value": "0.08 mm"
+  }
+}

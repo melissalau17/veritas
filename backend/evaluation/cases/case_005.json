@@ -1,0 +1,16 @@
+{
+  "id": "case_005",
+  "name": "Same symptom / different root cause",
+  "problem": "Centrifugal pump high vibration after maintenance with bearing temperature rising.",
+  "asset_id": "P-101",
+  "expected": {
+    "revision_conflict": false,
+    "diagnosis_allowed": false,
+    "alternative_hypothesis": "Bearing degradation",
+    "counter_evidence_found": true
+  },
+  "target_source": "OEM-Pump-Manual.txt",
+  "active_documents": [
+    "OEM-Pump-Manual.txt"
+  ]
+}

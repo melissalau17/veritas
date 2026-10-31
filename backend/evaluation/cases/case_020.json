@@ -1,0 +1,12 @@
+{
+  "id": "case_020",
+  "name": "Fully supported investigation",
+  "problem": "Pump P-101 has abnormal vibration after its coupling was replaced.",
+  "asset_id": "P-101",
+  "expected": {
+    "revision_conflict": true,
+    "grounding_verified": true,
+    "uncertainty_preserved": true,
+    "diagnosis_allowed": false
+  }
+}

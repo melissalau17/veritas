@@ -1,0 +1,12 @@
+OEM TECHNICAL MANUAL
+
+Equipment:
+CP-200 Centrifugal Pump
+
+For abnormal vibration following coupling maintenance:
+
+1. Verify coupling alignment.
+2. Inspect coupling condition.
+3. Check bearing condition.
+4. Verify mounting bolts.
+5. Compare vibration readings with normal operating baseline.

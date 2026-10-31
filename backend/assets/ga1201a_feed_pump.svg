@@ -1,0 +1,139 @@
+<svg viewBox="0 0 900 560" width="900" height="560" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid_ga" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.6"/>
+      <circle cx="0" cy="0" r="1" fill="#334155" opacity="0.8" />
+    </pattern>
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="motorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0369a1"/>
+      <stop offset="50%" stop-color="#0c4a6e"/>
+      <stop offset="100%" stop-color="#082f49"/>
+    </linearGradient>
+    <linearGradient id="impellerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="560" fill="#070b12" />
+  <rect width="900" height="560" fill="url(#grid_ga)" />
+
+  <!-- Drawing Border & Header -->
+  <rect x="20" y="20" width="860" height="520" fill="none" stroke="#334155" stroke-width="1.5" />
+  <rect x="30" y="30" width="240" height="50" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2" />
+  <text x="44" y="52" fill="#38bdf8" font-family="monospace" font-size="13" font-weight="bold">GA-1201A · HEXANE FEED PUMP</text>
+  <text x="44" y="70" fill="#94a3b8" font-family="monospace" font-size="10.5">MULTISTAGE HIGH-PRESSURE BARREL PUMP</text>
+
+  <!-- Title block right -->
+  <g transform="translate(620, 30)">
+    <rect width="250" height="40" rx="3" fill="#0f172a" stroke="#475569" stroke-width="1" />
+    <text x="14" y="18" fill="#94a3b8" font-family="monospace" font-size="9.5">DISCHARGE PRESSURE: 42 BAR</text>
+    <text x="14" y="32" fill="#38bdf8" font-family="monospace" font-size="10" font-weight="bold">API 682 PLAN 53B SEALING SYSTEM</text>
+  </g>
+
+  <!-- Heavy Baseplate Skid -->
+  <rect x="60" y="420" width="780" height="40" rx="4" fill="#1e293b" stroke="#475569" stroke-width="2" />
+  <rect x="50" y="460" width="800" height="15" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <!-- Anchor Bolts -->
+  <rect x="90" y="475" width="20" height="15" fill="#64748b" />
+  <rect x="260" y="475" width="20" height="15" fill="#64748b" />
+  <rect x="500" y="475" width="20" height="15" fill="#64748b" />
+  <rect x="780" y="475" width="20" height="15" fill="#64748b" />
+
+  <!-- Centerline -->
+  <line x1="60" y1="280" x2="840" y2="280" stroke="#0ea5e9" stroke-width="1" stroke-dasharray="12,4,2,4" opacity="0.4" />
+
+  <!-- ================= COMPONENT 1: ELECTRIC MOTOR (left: 80, top: 160, right: 380, bottom: 400) ================= -->
+  <g id="electric_motor">
+    <!-- Motor Base Feet -->
+    <rect x="110" y="390" width="50" height="30" fill="#334155" stroke="#64748b" stroke-width="1.5" />
+    <rect x="300" y="390" width="50" height="30" fill="#334155" stroke="#64748b" stroke-width="1.5" />
+    <!-- Motor Frame Casing -->
+    <rect x="90" y="170" width="280" height="220" rx="10" fill="url(#motorGrad)" stroke="#38bdf8" stroke-width="1.8" />
+    <!-- Motor Cooling Fins -->
+    <g stroke="#0369a1" stroke-width="2">
+      <line x1="120" y1="170" x2="120" y2="390" />
+      <line x1="140" y1="170" x2="140" y2="390" />
+      <line x1="160" y1="170" x2="160" y2="390" />
+      <line x1="180" y1="170" x2="180" y2="390" />
+      <line x1="200" y1="170" x2="200" y2="390" />
+      <line x1="220" y1="170" x2="220" y2="390" />
+      <line x1="240" y1="170" x2="240" y2="390" />
+      <line x1="260" y1="170" x2="260" y2="390" />
+      <line x1="280" y1="170" x2="280" y2="390" />
+      <line x1="300" y1="170" x2="300" y2="390" />
+      <line x1="320" y1="170" x2="320" y2="390" />
+      <line x1="340" y1="170" x2="340" y2="390" />
+    </g>
+    <!-- Motor Fan Cowl (Left end) -->
+    <path d="M 90 185 Q 70 185 70 280 Q 70 375 90 375 Z" fill="#082f49" stroke="#38bdf8" stroke-width="1.5" />
+    <!-- Terminal Box (Top) -->
+    <rect x="180" y="125" width="80" height="45" rx="3" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="220" y="152" fill="#e0f2fe" font-family="monospace" font-size="9" text-anchor="middle">400V / 90kW</text>
+    <text x="230" y="380" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">3-PHASE INDUCTION MOTOR</text>
+  </g>
+
+  <!-- ================= COMPONENT 2: THRUST BEARING (left: 380, top: 200, right: 460, bottom: 360) ================= -->
+  <g id="thrust_bearing">
+    <!-- Spacer Coupling & Thrust Housing -->
+    <rect x="375" y="270" width="85" height="20" fill="#64748b" stroke="#94a3b8" stroke-width="1" />
+    <rect x="390" y="210" width="65" height="140" rx="4" fill="url(#metalGrad)" stroke="#f59e0b" stroke-width="1.8" />
+    <!-- Tilting Pad Bearings -->
+    <rect x="400" y="230" width="16" height="40" fill="#f59e0b" fill-opacity="0.4" stroke="#f59e0b" stroke-width="1" />
+    <rect x="400" y="290" width="16" height="40" fill="#f59e0b" fill-opacity="0.4" stroke="#f59e0b" stroke-width="1" />
+    <text x="422" y="285" fill="#fde68a" font-family="monospace" font-size="8.5" text-anchor="middle">THRUST</text>
+  </g>
+
+  <!-- ================= COMPONENT 3: MECHANICAL SEAL (left: 460, top: 220, right: 580, bottom: 340) ================= -->
+  <g id="mechanical_seal">
+    <!-- Dual Cartridge Seal Gland -->
+    <rect x="465" y="225" width="110" height="110" rx="3" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
+    <!-- Seal Faces (Silicon Carbide / Carbon) -->
+    <line x1="505" y1="235" x2="505" y2="325" stroke="#38bdf8" stroke-width="4" />
+    <line x1="512" y1="235" x2="512" y2="325" stroke="#f59e0b" stroke-width="4" />
+    <line x1="545" y1="235" x2="545" y2="325" stroke="#38bdf8" stroke-width="4" />
+    <line x1="552" y1="235" x2="552" y2="325" stroke="#f59e0b" stroke-width="4" />
+    <!-- Seal Barrier Fluid Ports (Plan 53B) -->
+    <rect x="495" y="195" width="16" height="30" fill="#334155" stroke="#38bdf8" stroke-width="1" />
+    <rect x="535" y="195" width="16" height="30" fill="#334155" stroke="#38bdf8" stroke-width="1" />
+    <text x="520" y="185" fill="#38bdf8" font-family="monospace" font-size="9" text-anchor="middle">API PLAN 53B FLUSH</text>
+  </g>
+
+  <!-- ================= COMPONENT 4: IMPELLER STAGE / PUMP BARREL (left: 580, top: 160, right: 820, bottom: 400) ================= -->
+  <g id="impeller_stage">
+    <!-- Pump Casing Barrel -->
+    <rect x="585" y="170" width="230" height="220" rx="8" fill="url(#metalGrad)" stroke="#64748b" stroke-width="2" />
+    <!-- Multistage Ring Sections (4 Impeller Stages) -->
+    <g fill="url(#impellerGrad)" stroke="#0ea5e9" stroke-width="1.2">
+      <!-- Stage 1 -->
+      <rect x="600" y="195" width="45" height="170" rx="2" />
+      <path d="M 610 240 Q 625 280 610 320" fill="none" stroke="#38bdf8" stroke-width="2.5" />
+      <!-- Stage 2 -->
+      <rect x="655" y="195" width="45" height="170" rx="2" />
+      <path d="M 665 240 Q 680 280 665 320" fill="none" stroke="#38bdf8" stroke-width="2.5" />
+      <!-- Stage 3 -->
+      <rect x="710" y="195" width="45" height="170" rx="2" />
+      <path d="M 720 240 Q 735 280 720 320" fill="none" stroke="#38bdf8" stroke-width="2.5" />
+      <!-- Stage 4 -->
+      <rect x="765" y="195" width="45" height="170" rx="2" />
+      <path d="M 775 240 Q 790 280 775 320" fill="none" stroke="#38bdf8" stroke-width="2.5" />
+    </g>
+
+    <!-- Suction Nozzle (End) -->
+    <rect x="815" y="250" width="35" height="60" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <rect x="845" y="240" width="12" height="80" rx="2" fill="#475569" stroke="#64748b" stroke-width="1.5" />
+    <text x="830" y="340" fill="#38bdf8" font-family="monospace" font-size="9" text-anchor="middle">SUCTION</text>
+
+    <!-- Discharge Nozzle (Top) -->
+    <rect x="620" y="110" width="55" height="60" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <rect x="610" y="98" width="75" height="12" rx="2" fill="#475569" stroke="#64748b" stroke-width="1.5" />
+    <text x="647" y="90" fill="#f59e0b" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle">42 BAR DISCHARGE</text>
+  </g>
+
+</svg>

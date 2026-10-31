@@ -1,0 +1,16 @@
+ROOT CAUSE ANALYSIS: RCA-017
+
+Asset: P-101
+Incident Date: 2024-06-12
+
+Problem:
+High vibration was detected after coupling maintenance.
+
+Root Cause:
+Coupling misalignment.
+
+Corrective Action:
+Realign pump and motor according to MNT-014 Revision 2.
+
+Result:
+Vibration returned to normal range.

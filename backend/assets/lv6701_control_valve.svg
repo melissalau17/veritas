@@ -1,0 +1,116 @@
+<svg viewBox="0 0 900 560" width="900" height="560" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid_lv" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.6"/>
+      <circle cx="0" cy="0" r="1" fill="#334155" opacity="0.8" />
+    </pattern>
+    <linearGradient id="actuatorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="560" fill="#070b12" />
+  <rect width="900" height="560" fill="url(#grid_lv)" />
+
+  <!-- Drawing Border & Header -->
+  <rect x="20" y="20" width="860" height="520" fill="none" stroke="#334155" stroke-width="1.5" />
+  <rect x="30" y="30" width="280" height="50" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2" />
+  <text x="44" y="52" fill="#38bdf8" font-family="monospace" font-size="13" font-weight="bold">LV-6701 · LEVEL CONTROL VALVE</text>
+  <text x="44" y="70" fill="#94a3b8" font-family="monospace" font-size="10.5">GLOBE VALVE W/ SPRING DIAPHRAGM ACTUATOR</text>
+
+  <!-- Title block right -->
+  <g transform="translate(630, 30)">
+    <rect width="240" height="40" rx="3" fill="#0f172a" stroke="#475569" stroke-width="1" />
+    <text x="14" y="18" fill="#94a3b8" font-family="monospace" font-size="9.5">TRIM: 316L SS CONTOURED PLUG</text>
+    <text x="14" y="32" fill="#38bdf8" font-family="monospace" font-size="10" font-weight="bold">PACKING: LIVE-LOADED PTFE V-RING</text>
+  </g>
+
+  <!-- Piping Centerline -->
+  <line x1="160" y1="410" x2="740" y2="410" stroke="#0ea5e9" stroke-width="1" stroke-dasharray="12,4,2,4" opacity="0.4" />
+
+  <!-- Connecting Process Piping -->
+  <rect x="140" y="380" width="120" height="60" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+  <rect x="640" y="380" width="120" height="60" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+  <!-- Process Flanges -->
+  <rect x="245" y="365" width="15" height="90" rx="2" fill="#475569" stroke="#64748b" stroke-width="1.5" />
+  <rect x="640" y="365" width="15" height="90" rx="2" fill="#475569" stroke="#64748b" stroke-width="1.5" />
+
+  <!-- ================= COMPONENT 1: PNEUMATIC ACTUATOR (left: 310, top: 40, right: 590, bottom: 220) ================= -->
+  <g id="pneumatic_actuator">
+    <!-- Top Diaphragm Case (Dome) -->
+    <path d="M 330 115 Q 450 45 570 115 Z" fill="url(#actuatorGrad)" stroke="#38bdf8" stroke-width="2" />
+    <!-- Lower Diaphragm Case -->
+    <path d="M 330 115 Q 450 170 570 115 Z" fill="#0c4a6e" stroke="#38bdf8" stroke-width="2" />
+    <!-- Center Clamp Flange -->
+    <rect x="320" y="110" width="260" height="10" rx="2" fill="#0284c7" stroke="#38bdf8" stroke-width="1" />
+    <!-- Diaphragm Plate & Internal Return Spring -->
+    <line x1="360" y1="115" x2="540" y2="115" stroke="#f59e0b" stroke-width="3" />
+    <!-- Air Supply Port (Top Dome) -->
+    <rect x="440" y="45" width="20" height="20" fill="#334155" stroke="#38bdf8" stroke-width="1.2" />
+    <text x="450" y="38" fill="#38bdf8" font-family="monospace" font-size="9" text-anchor="middle">AIR TO DIAPHRAGM</text>
+
+    <!-- Actuator Yoke Legs (Left and Right) -->
+    <rect x="375" y="130" width="16" height="110" fill="#1e293b" stroke="#64748b" stroke-width="1.5" />
+    <rect x="509" y="130" width="16" height="110" fill="#1e293b" stroke="#64748b" stroke-width="1.5" />
+
+    <!-- Digital Valve Positioner (Smart Controller Mounted on Yoke) -->
+    <rect x="525" y="145" width="55" height="65" rx="3" fill="#0f172a" stroke="#10b981" stroke-width="1.5" />
+    <text x="552" y="172" fill="#34d399" font-family="monospace" font-size="8.5" font-weight="bold" text-anchor="middle">HART DVC</text>
+    <text x="552" y="186" fill="#94a3b8" font-family="monospace" font-size="7.5" text-anchor="middle">POSITIONER</text>
+
+    <text x="450" y="100" fill="#e0f2fe" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">MULTI-SPRING DIAPHRAGM</text>
+  </g>
+
+  <!-- ================= COMPONENT 2: VALVE STEM & PACKING BOX (left: 380, top: 200, right: 520, bottom: 380) ================= -->
+  <g id="valve_stem_packing">
+    <!-- Center Reciprocating Stem Rod -->
+    <rect x="445" y="125" width="10" height="235" fill="#cbd5e1" stroke="#f8fafc" stroke-width="1" />
+    <!-- Travel Indicator Plate & Scale -->
+    <rect x="460" y="170" width="18" height="40" fill="#0f172a" stroke="#94a3b8" stroke-width="1" />
+    <line x1="455" y1="190" x2="475" y2="190" stroke="#f59e0b" stroke-width="2" /> <!-- Indicator needle -->
+
+    <!-- Packing Gland Follower Flange & Live-Loading Belleville Springs -->
+    <rect x="420" y="240" width="60" height="15" rx="2" fill="#475569" stroke="#94a3b8" stroke-width="1.5" />
+    <!-- Belleville Disc Spring Stacks -->
+    <line x1="428" y1="230" x2="428" y2="240" stroke="#f59e0b" stroke-width="3" />
+    <line x1="472" y1="230" x2="472" y2="240" stroke="#f59e0b" stroke-width="3" />
+
+    <!-- Stuffing Box Cutaway (PTFE V-Ring Chevrons) -->
+    <rect x="425" y="255" width="50" height="70" fill="#0f172a" stroke="#ef4444" stroke-width="1.8" />
+    <!-- Chevron Packing Rings -->
+    <path d="M 432 268 L 445 275 L 432 282" fill="none" stroke="#fca5a5" stroke-width="2" />
+    <path d="M 468 268 L 455 275 L 468 282" fill="none" stroke="#fca5a5" stroke-width="2" />
+    <path d="M 432 288 L 445 295 L 432 302" fill="none" stroke="#fca5a5" stroke-width="2" />
+    <path d="M 468 288 L 455 295 L 468 302" fill="none" stroke="#fca5a5" stroke-width="2" />
+
+    <!-- Overtightened Packing Friction Fault Highlight -->
+    <text x="450" y="340" fill="#fca5a5" font-family="monospace" font-size="9.5" font-weight="bold" text-anchor="middle">STEM FRICTION SEIZURE</text>
+    <text x="450" y="354" fill="#ef4444" font-family="monospace" font-size="8.5" text-anchor="middle">(OVERTORQUED GLAND)</text>
+  </g>
+
+  <!-- ================= COMPONENT 3: GLOBE VALVE BODY (left: 260, top: 340, right: 640, bottom: 480) ================= -->
+  <g id="valve_body">
+    <!-- Cast Steel Valve Body Shell -->
+    <path d="M 260 375 L 340 375 Q 380 345 450 345 Q 520 345 560 375 L 640 375 L 640 445 L 560 445 Q 520 475 450 475 Q 380 475 340 445 L 260 445 Z" fill="url(#bodyGrad)" stroke="#64748b" stroke-width="2.5" />
+
+    <!-- Internal Flow Path & Orifice Port -->
+    <!-- Valve Seat Ring -->
+    <rect x="420" y="420" width="60" height="8" rx="1" fill="#f59e0b" stroke="#fde68a" stroke-width="1" />
+    <!-- Valve Plug (Contoured Throttle Plug) -->
+    <path d="M 430 380 L 470 380 L 455 418 L 445 418 Z" fill="#94a3b8" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- Flow Arrow -->
+    <path d="M 280 410 L 370 410 Q 420 410 440 435 Q 460 450 510 410 L 620 410" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6,3" />
+
+    <text x="450" y="465" fill="#94a3b8" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">ASME CLASS 300 GLOBE BODY</text>
+  </g>
+
+</svg>

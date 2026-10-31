@@ -1,0 +1,18 @@
+{
+  "id": "case_006",
+  "name": "Missing measurement",
+  "problem": "P-101 coupling replaced yesterday, technician did not log final laser alignment readings.",
+  "asset_id": "P-101",
+  "expected": {
+    "revision_conflict": false,
+    "diagnosis_allowed": false,
+    "missing_measurements": [
+      "Current coupling alignment measurement"
+    ],
+    "uncertainty_preserved": true
+  },
+  "target_source": "WO-1842.txt",
+  "active_documents": [
+    "WO-1842.txt"
+  ]
+}

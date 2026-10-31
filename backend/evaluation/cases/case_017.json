@@ -1,0 +1,10 @@
+{
+  "id": "case_017",
+  "name": "Incorrect referenced procedure",
+  "problem": "Work order references non-existent procedure SOP-999 for coupling replacement.",
+  "asset_id": "P-101",
+  "expected": {
+    "citation_valid": false,
+    "warning_raised": true
+  }
+}

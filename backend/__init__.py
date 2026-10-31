@@ -1,0 +1,1 @@
+"""Veritas — FastAPI Backend Package."""

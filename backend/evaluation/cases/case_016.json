@@ -1,0 +1,14 @@
+{
+  "id": "case_016",
+  "name": "Missing equipment family",
+  "problem": "Unregistered pump auxiliary skid with unknown manufacturer and equipment series.",
+  "asset_id": "P-UNKNOWN",
+  "expected": {
+    "applicability": "INSUFFICIENT INFORMATION",
+    "warning_required": true
+  },
+  "target_source": "missing_asset_record.txt",
+  "active_documents": [
+    "OEM-Pump-Manual.txt"
+  ]
+}

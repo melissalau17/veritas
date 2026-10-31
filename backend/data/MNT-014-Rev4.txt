@@ -1,0 +1,12 @@
+PROCEDURE: MNT-014
+Revision: 4
+Status: CURRENT
+
+Pump Coupling Alignment Procedure
+
+Maximum allowable offset:
+0.08 mm
+
+This procedure applies to CP-200 centrifugal pumps.
+
+Revision 4 supersedes Revision 2.

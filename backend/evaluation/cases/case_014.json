@@ -1,0 +1,10 @@
+{
+  "id": "case_014",
+  "name": "Weak historical similarity",
+  "problem": "P-101 has mild temperature fluctuations; matching against severe vibration incident.",
+  "asset_id": "P-101",
+  "expected": {
+    "strength_category": "weak",
+    "diagnosis_allowed": false
+  }
+}

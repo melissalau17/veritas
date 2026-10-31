@@ -1,0 +1,10 @@
+{
+  "id": "case_018",
+  "name": "Procedure without status",
+  "problem": "Legacy alignment note with missing status header evaluated.",
+  "asset_id": "P-101",
+  "expected": {
+    "graceful_handling": true,
+    "diagnosis_allowed": false
+  }
+}

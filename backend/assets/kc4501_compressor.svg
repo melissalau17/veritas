@@ -1,0 +1,123 @@
+<svg viewBox="0 0 900 560" width="900" height="560" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid_kc" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.6"/>
+      <circle cx="0" cy="0" r="1" fill="#334155" opacity="0.8" />
+    </pattern>
+    <linearGradient id="compCasing" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+    <linearGradient id="impellerWheel" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="560" fill="#070b12" />
+  <rect width="900" height="560" fill="url(#grid_kc)" />
+
+  <!-- Drawing Border & Header -->
+  <rect x="20" y="20" width="860" height="520" fill="none" stroke="#334155" stroke-width="1.5" />
+  <rect x="30" y="30" width="260" height="50" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2" />
+  <text x="44" y="52" fill="#38bdf8" font-family="monospace" font-size="13" font-weight="bold">KC-4501 · RECYCLE COMPRESSOR</text>
+  <text x="44" y="70" fill="#94a3b8" font-family="monospace" font-size="10.5">HORIZONTALLY-SPLIT CENTRIFUGAL CASING</text>
+
+  <!-- Title block right -->
+  <g transform="translate(630, 30)">
+    <rect width="240" height="40" rx="3" fill="#0f172a" stroke="#475569" stroke-width="1" />
+    <text x="14" y="18" fill="#94a3b8" font-family="monospace" font-size="9.5">PROCESS GAS: ETHYLENE + H2</text>
+    <text x="14" y="32" fill="#38bdf8" font-family="monospace" font-size="10" font-weight="bold">SPEED: 11,200 RPM · 5 STAGES</text>
+  </g>
+
+  <!-- Heavy Foundation Base -->
+  <rect x="290" y="420" width="560" height="45" rx="3" fill="#1e293b" stroke="#475569" stroke-width="2" />
+  <rect x="280" y="465" width="580" height="15" fill="#0f172a" stroke="#334155" stroke-width="1" />
+
+  <!-- Shaft Centerline -->
+  <line x1="300" y1="280" x2="840" y2="280" stroke="#0ea5e9" stroke-width="1" stroke-dasharray="12,4,2,4" opacity="0.4" />
+
+  <!-- ================= COMPONENT 4: LUBE OIL CONSOLE (left: 100, top: 320, right: 320, bottom: 480) ================= -->
+  <g id="lube_console">
+    <!-- Lube Oil Reservoir Tank -->
+    <rect x="105" y="330" width="205" height="145" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="2" />
+    <!-- Sight Glass Level Indicator -->
+    <rect x="120" y="360" width="14" height="80" rx="3" fill="#0f172a" stroke="#94a3b8" stroke-width="1" />
+    <rect x="122" y="390" width="10" height="45" fill="#f59e0b" opacity="0.6" />
+    <!-- Duplex Oil Filter Cartridges -->
+    <rect x="160" y="345" width="35" height="70" rx="4" fill="#334155" stroke="#f59e0b" stroke-width="1.2" />
+    <rect x="205" y="345" width="35" height="70" rx="4" fill="#334155" stroke="#f59e0b" stroke-width="1.2" />
+    <!-- Lube Oil Pump & Motor -->
+    <rect x="250" y="360" width="50" height="50" rx="3" fill="#0284c7" stroke="#38bdf8" stroke-width="1.2" />
+    <text x="275" y="390" fill="#e0f2fe" font-family="monospace" font-size="8" text-anchor="middle">AUX PUMP</text>
+    <!-- Supply & Return Piping Lines -->
+    <path d="M 270 360 L 270 290 L 340 290" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="4,2" />
+    <text x="200" y="455" fill="#fde68a" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">ISO VG 46 LUBE CONSOLE</text>
+  </g>
+
+  <!-- ================= COMPONENT 1: CASING BARREL (left: 320, top: 140, right: 820, bottom: 420) ================= -->
+  <g id="casing_barrel">
+    <!-- Heavy Horizontally Split Flanged Casing -->
+    <rect x="330" y="150" width="480" height="260" rx="10" fill="url(#compCasing)" stroke="#64748b" stroke-width="2.5" />
+    <!-- Horizontal Split Joint Flange -->
+    <rect x="325" y="274" width="490" height="12" fill="#475569" stroke="#94a3b8" stroke-width="1.2" />
+    <!-- Casing Flange Stud Bolts -->
+    <g fill="#cbd5e1">
+      <circle cx="350" cy="280" r="3" />
+      <circle cx="390" cy="280" r="3" />
+      <circle cx="430" cy="280" r="3" />
+      <circle cx="710" cy="280" r="3" />
+      <circle cx="750" cy="280" r="3" />
+      <circle cx="790" cy="280" r="3" />
+    </g>
+    <!-- Large Suction Volute Nozzle -->
+    <rect x="400" y="90" width="90" height="65" fill="#1e293b" stroke="#475569" stroke-width="2" />
+    <rect x="385" y="80" width="120" height="14" rx="2" fill="#475569" stroke="#94a3b8" stroke-width="1.5" />
+    <text x="445" y="70" fill="#38bdf8" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">SUCTION NOZZLE (18")</text>
+
+    <!-- Discharge Volute Nozzle -->
+    <rect x="680" y="90" width="80" height="65" fill="#1e293b" stroke="#475569" stroke-width="2" />
+    <rect x="668" y="80" width="104" height="14" rx="2" fill="#475569" stroke="#94a3b8" stroke-width="1.5" />
+    <text x="720" y="70" fill="#f59e0b" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">DISCHARGE (12")</text>
+  </g>
+
+  <!-- ================= COMPONENT 2: ROTOR ASSEMBLY (left: 380, top: 180, right: 760, bottom: 380) ================= -->
+  <g id="rotor_assembly">
+    <!-- Cutaway Window to Inner Flow Path -->
+    <rect x="390" y="190" width="360" height="180" rx="4" fill="#070b14" stroke="#334155" stroke-dasharray="4,4" />
+    <!-- Compressor Central Rotor Shaft -->
+    <rect x="340" y="272" width="460" height="16" fill="#94a3b8" stroke="#cbd5e1" stroke-width="1.5" />
+
+    <!-- 5 Impeller Wheels (Closed Centrifugal Design) -->
+    <!-- Wheel 1 -->
+    <path d="M 430 200 L 450 240 L 450 320 L 430 360 Z" fill="url(#impellerWheel)" stroke="#38bdf8" stroke-width="1.5" />
+    <!-- Wheel 2 -->
+    <path d="M 490 205 L 508 240 L 508 320 L 490 355 Z" fill="url(#impellerWheel)" stroke="#38bdf8" stroke-width="1.5" />
+    <!-- Wheel 3 -->
+    <path d="M 550 210 L 566 240 L 566 320 L 550 350 Z" fill="url(#impellerWheel)" stroke="#38bdf8" stroke-width="1.5" />
+    <!-- Wheel 4 -->
+    <path d="M 610 215 L 624 240 L 624 320 L 610 345 Z" fill="url(#impellerWheel)" stroke="#38bdf8" stroke-width="1.5" />
+    <!-- Wheel 5 -->
+    <path d="M 670 220 L 682 240 L 682 320 L 670 340 Z" fill="url(#impellerWheel)" stroke="#38bdf8" stroke-width="1.5" />
+
+    <!-- Balance Piston -->
+    <rect x="710" y="240" width="35" height="80" rx="2" fill="#475569" stroke="#94a3b8" stroke-width="1.5" />
+    <text x="560" y="375" fill="#38bdf8" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">5-STAGE CENTRIFUGAL ROTOR BUNDLE</text>
+  </g>
+
+  <!-- ================= COMPONENT 3: DRY GAS SEAL CARTRIDGE (left: 340, top: 200, right: 480, bottom: 360) ================= -->
+  <g id="dry_gas_seal">
+    <!-- Drive-End DGS Cartridge Box -->
+    <rect x="350" y="210" width="65" height="140" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="2" />
+    <!-- Spiral Groove Non-Contacting Faces -->
+    <line x1="375" y1="225" x2="375" y2="335" stroke="#10b981" stroke-width="3.5" />
+    <line x1="382" y1="225" x2="382" y2="335" stroke="#34d399" stroke-width="3.5" stroke-dasharray="4,2" />
+    <!-- Primary Vent & Secondary N2 Barrier Tap -->
+    <rect x="365" y="175" width="16" height="35" fill="#334155" stroke="#10b981" stroke-width="1.2" />
+    <text x="373" y="165" fill="#34d399" font-family="monospace" font-size="8.5" text-anchor="middle">N2 BARRIER</text>
+    <text x="382" y="360" fill="#a7f3d0" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle">DRY GAS SEAL</text>
+  </g>
+
+</svg>

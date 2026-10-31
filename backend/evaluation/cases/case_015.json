@@ -1,0 +1,10 @@
+{
+  "id": "case_015",
+  "name": "Contradicting inspection result",
+  "problem": "P-101 coupling alignment measured at 0.04 mm (well within 0.08 mm tolerance), but vibration persists.",
+  "asset_id": "P-101",
+  "expected": {
+    "leading_hypothesis_weakened": true,
+    "alternative_investigation_required": true
+  }
+}

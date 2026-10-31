@@ -1,0 +1,11 @@
+{
+  "id": "case_013",
+  "name": "Multiple candidate hypotheses",
+  "problem": "P-101 experiencing elevated vibration with both recent coupling work and high operating hours on motor bearing.",
+  "asset_id": "P-101",
+  "expected": {
+    "multiple_hypotheses": true,
+    "deterministic_strength_applied": true,
+    "no_fake_percentages": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "case_003",
+  "name": "Wrong equipment family",
+  "problem": "Pump P-101 high vibration incident evaluated against transfer pump RCA-022.",
+  "asset_id": "P-101",
+  "equipment_family": "CP-200",
+  "target_source": "RCA-022.txt",
+  "expected": {
+    "revision_conflict": false,
+    "diagnosis_allowed": false,
+    "applicability": "ANALOGOUS ONLY",
+    "warning_required": true
+  },
+  "active_documents": [
+    "RCA-022.txt"
+  ]
+}

@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: veritas-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_BASE_URL=https://inference.baseten.co/v1
+      - MODEL_NAME=meta-models/muse-spark-open
+      - BASETEN_API_KEY=${BASETEN_API_KEY}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: veritas-frontend
+    ports:
+      - "8080:8080"
+    environment:
+      - VITE_API_URL=http://backend:8000
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+

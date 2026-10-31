@@ -1,0 +1,15 @@
+{
+  "id": "case_012",
+  "name": "Current RCA + current procedure",
+  "problem": "P-101 alignment checked against current MNT-014 Revision 4 approved standard.",
+  "asset_id": "P-101",
+  "expected": {
+    "revision_conflict": false,
+    "applicability": "APPLICABLE",
+    "diagnosis_allowed": false
+  },
+  "target_source": "MNT-014-Rev4.txt",
+  "active_documents": [
+    "MNT-014-Rev4.txt"
+  ]
+}

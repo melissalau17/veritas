@@ -1,0 +1,19 @@
+{
+  "id": "case_002",
+  "name": "Current procedure",
+  "problem": "Technician performing routine alignment check on P-101 according to MNT-014 Rev 4.",
+  "asset_id": "P-101",
+  "equipment_family": "CP-200",
+  "expected": {
+    "revision_conflict": false,
+    "diagnosis_allowed": false,
+    "required_sources": [
+      "MNT-014-Rev4.txt"
+    ],
+    "applicability": "APPLICABLE"
+  },
+  "target_source": "MNT-014-Rev4.txt",
+  "active_documents": [
+    "MNT-014-Rev4.txt"
+  ]
+}

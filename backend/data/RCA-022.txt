@@ -1,0 +1,21 @@
+ROOT CAUSE ANALYSIS: RCA-022
+
+Asset: P-205
+Equipment family: CP-100
+Incident Date: 2025-02-14
+
+Problem:
+High vibration was observed during routine operation on transfer pump.
+
+Root Cause:
+Bearing degradation due to lubricant contamination.
+
+Corrective Action:
+Replaced drive-end bearing and renewed grease lubrication per MNT-008.
+
+Result:
+Vibration levels normalized to baseline.
+
+Note:
+Applies to CP-100 light-duty pump series.
+

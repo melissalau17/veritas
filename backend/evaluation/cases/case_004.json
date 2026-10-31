@@ -1,0 +1,16 @@
+{
+  "id": "case_004",
+  "name": "Wrong asset ID",
+  "problem": "Investigating vibration on P-101 but incident report cites pump P-303.",
+  "asset_id": "P-303",
+  "expected": {
+    "revision_conflict": false,
+    "diagnosis_allowed": false,
+    "asset_match": false,
+    "applicability": "NOT APPLICABLE"
+  },
+  "target_source": "RCA-017.txt",
+  "active_documents": [
+    "OEM-Pump-Manual.txt"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "case_011",
+  "name": "No relevant history",
+  "problem": "New pump GA-900 installed with no historical maintenance records or RCAs.",
+  "asset_id": "GA-900",
+  "expected": {
+    "fallback_to_manual": true,
+    "diagnosis_allowed": false,
+    "uncertainty_preserved": true
+  }
+}

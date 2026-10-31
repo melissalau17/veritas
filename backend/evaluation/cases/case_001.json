@@ -1,0 +1,16 @@
+{
+  "id": "case_001",
+  "name": "Superseded procedure",
+  "problem": "Pump P-101 has abnormal vibration after coupling replacement.",
+  "asset_id": "P-101",
+  "equipment_family": "CP-200",
+  "expected": {
+    "revision_conflict": true,
+    "diagnosis_allowed": false,
+    "required_sources": [
+      "RCA-017.txt",
+      "MNT-014-Rev4.txt"
+    ],
+    "applicability": "APPLICABLE WITH WARNING"
+  }
+}

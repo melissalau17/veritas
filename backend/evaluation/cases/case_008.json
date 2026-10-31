@@ -1,0 +1,10 @@
+{
+  "id": "case_008",
+  "name": "Duplicate evidence",
+  "problem": "Pump P-101 coupling alignment verification with duplicate search hits for WO-1842.",
+  "asset_id": "P-101",
+  "expected": {
+    "deduplication_success": true,
+    "diagnosis_allowed": false
+  }
+}

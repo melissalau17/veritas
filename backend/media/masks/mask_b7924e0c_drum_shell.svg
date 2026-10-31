@@ -1,0 +1,22 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" className="w-full h-full pointer-events-none">
+  <defs>
+    <filter id="glow-drum-shell" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Semi-transparent segmentation highlight -->
+  <rect x="135.0" y="84.0" width="630.0" height="392.0" rx="31.36"
+        fill="#0ea5e9" fill-opacity="0.28" stroke="#0ea5e9" stroke-width="2.5" stroke-dasharray="6,4"
+        filter="url(#glow-drum-shell)" />
+  <!-- Corner anchor markers -->
+  <circle cx="135.0" cy="84.0" r="4" fill="#0ea5e9" />
+  <circle cx="765.0" cy="84.0" r="4" fill="#0ea5e9" />
+  <circle cx="135.0" cy="476.0" r="4" fill="#0ea5e9" />
+  <circle cx="765.0" cy="476.0" r="4" fill="#0ea5e9" />
+  <!-- Component Badge -->
+  <g transform="translate(135.0, 76.0)">
+    <rect x="0" y="-14" width="91.0" height="18" rx="3" fill="#0f172a" fill-opacity="0.85" />
+    <text x="8" y="-1" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold">DRUM SHELL</text>
+  </g>
+</svg>
