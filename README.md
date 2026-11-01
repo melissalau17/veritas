@@ -203,25 +203,22 @@ cd backend
 ## Running Locally
 
 ### Prerequisites
-- Python 3.11+
+- Python 3.13+
 - Node.js 18+ & npm
+- [uv](https://docs.astral.sh/uv/)
 
 ### 1. Backend Setup
 ```bash
 cd backend
 
-# Create virtual environment
-python3 -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
+# Create the virtual environment and install dependencies
+uv sync --group server
 
 # Configure environment
 cp .env.example .env
 
 # Run FastAPI server (port 8000)
-python -m uvicorn main:app --reload --port 8000
+uv run uvicorn main:app --reload --port 8000
 ```
 Backend API will be running at `http://localhost:8000`.  
 Swagger documentation available at `http://localhost:8000/docs`.
@@ -241,7 +238,7 @@ Open `http://localhost:5173` in your browser.
 ### 3. Run Backend Test Suite
 ```bash
 cd backend
-./.venv/bin/python -m pytest tests/ -v
+uv run pytest tests/ -v
 ```
 All 26 integration tests will execute covering Day 1, Day 2, and Day 3 requirements.
 

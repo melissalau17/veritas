@@ -8,6 +8,7 @@ Test D — Incident parsing
 Test E — API endpoint smoke test
 """
 
+import asyncio
 import sys
 from pathlib import Path
 
@@ -18,6 +19,24 @@ if str(_backend_dir) not in sys.path:
 
 import pytest
 from services.investigation_service import run_investigation, _parse_incident
+import src.meta_client as meta_client
+
+
+def test_ask_muse_awaits_async_client(monkeypatch):
+    request = {}
+    monkeypatch.setattr(meta_client.settings, "MODEL_API_KEY", "test-key")
+
+    async def fake_post_json(url, *, headers, payload):
+        request.update(url=url, headers=headers, payload=payload)
+        return {"choices": [{"message": {"content": "Muse online."}}]}
+
+    monkeypatch.setattr(meta_client, "post_json", fake_post_json)
+
+    response = asyncio.run(meta_client.ask_muse("Test prompt"))
+
+    assert response == "Muse online."
+    assert request["payload"]["messages"][1]["content"] == "Test prompt"
+    assert request["headers"]["Authorization"] == "Bearer test-key"
 
 
 # ──────────────────────────────────────────────────────────
@@ -29,9 +48,9 @@ def test_superseded_revision_detected():
     The system must detect that RCA-017 references MNT-014 Rev 2,
     which is superseded by Rev 4.
     """
-    result, inv_id = run_investigation(
+    result, inv_id = asyncio.run(run_investigation(
         "Pump P-101 has abnormal vibration after its coupling was replaced."
-    )
+    ))
 
     # Must have at least one revision check
     assert len(result.revision_checks) > 0, "No revision checks were detected"
@@ -63,9 +82,9 @@ def test_no_false_diagnosis():
     Without measurements, Veritas must NOT claim confirmed
     root cause. Hypotheses must have confirmed=False.
     """
-    result, inv_id = run_investigation(
+    result, inv_id = asyncio.run(run_investigation(
         "Pump P-101 has abnormal vibration after its coupling was replaced."
-    )
+    ))
 
     for hypothesis in result.hypotheses:
         assert hypothesis.confirmed is False, (
@@ -93,9 +112,9 @@ def test_citation_grounding():
     Every claim with status 'supported' must reference at least
     one real source document from the data directory.
     """
-    result, inv_id = run_investigation(
+    result, inv_id = asyncio.run(run_investigation(
         "Pump P-101 has abnormal vibration after its coupling was replaced."
-    )
+    ))
 
     # Get actual source filenames
     data_dir = Path(__file__).resolve().parent.parent / "data"
@@ -138,9 +157,9 @@ def test_evidence_retrieval():
     The investigation must find WO-1842 and RCA-017
     when searching for P-101 vibration.
     """
-    result, inv_id = run_investigation(
+    result, inv_id = asyncio.run(run_investigation(
         "Pump P-101 has abnormal vibration after its coupling was replaced."
-    )
+    ))
 
     evidence_sources = {e.source for e in result.relevant_evidence}
     assert "WO-1842.txt" in evidence_sources, (
@@ -157,9 +176,9 @@ def test_evidence_retrieval():
 
 def test_trace_events():
     """The investigation must produce trace events."""
-    result, inv_id = run_investigation(
+    result, inv_id = asyncio.run(run_investigation(
         "Pump P-101 has abnormal vibration after its coupling was replaced."
-    )
+    ))
 
     assert len(result.trace) > 0, "No trace events generated"
 
@@ -170,4 +189,3 @@ def test_trace_events():
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
-

@@ -362,12 +362,15 @@ export function Troubleshooting() {
   // Day 2: Handle Vision Scene Analysis & SAM Grounding
   const handleAnalyzeVision = async (file: File | Blob) => {
     setVisionLoading(true);
+    const previewUrl = URL.createObjectURL(file);
+    setImageUrl(previewUrl);
     try {
       const response = await analyzeVision(file, problem, investigationId);
-      // Prepend backend base URL if relative path
-      const fullImgUrl = response.image_url.startsWith("http")
-        ? response.image_url
-        : `${API_BASE_URL}${response.image_url}`;
+      const fullImgUrl = response.image_url
+        ? response.image_url.startsWith("http")
+          ? response.image_url
+          : `${API_BASE_URL}${response.image_url}`
+        : previewUrl;
       setImageUrl(fullImgUrl);
       setSceneAnalysis(response.scene_analysis);
       setSegmentation(response.segmentation);
@@ -392,7 +395,6 @@ export function Troubleshooting() {
     } catch (err: any) {
       console.warn("Vision analysis error, falling back to local visual grounding:", err);
       // Local fallback for visual inspection
-      setImageUrl(config.imageUrl || "/pump_p101_assembly.jpg");
       const firstComp = config.components[0];
       setSceneAnalysis({
         equipment_type: config.equipmentType,
@@ -434,6 +436,11 @@ export function Troubleshooting() {
       setVisionLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (!imageUrl?.startsWith("blob:")) return;
+    return () => URL.revokeObjectURL(imageUrl);
+  }, [imageUrl]);
 
   // Load the equipment reference image.
   const handleLoadReferenceImage = async () => {
@@ -481,7 +488,9 @@ export function Troubleshooting() {
 
     // Find matching segmentation if exists
     let match = allSegmentations.find((s) => s.concept.toLowerCase() === compName.toLowerCase());
-    if (!match) {
+    if (match) {
+      setSegmentation(match);
+    } else if (!imageUrl?.startsWith("blob:")) {
       try {
         const seg = await getComponentSegmentation(compName, imageUrl || undefined);
         if (seg) {
@@ -492,8 +501,6 @@ export function Troubleshooting() {
       } catch (e) {
         console.warn("Could not fetch component segmentation:", e);
       }
-    } else {
-      setSegmentation(match);
     }
 
     // Fetch component history from backend if available

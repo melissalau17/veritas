@@ -9,6 +9,7 @@ Test E — Graph provenance & edge integrity
 Test F — End-to-end vision analysis API
 """
 
+import asyncio
 import sys
 from pathlib import Path
 
@@ -37,10 +38,10 @@ def test_relevant_component_selection():
     Given the problem 'High vibration after yesterday's coupling replacement',
     the scene analysis must select 'flexible coupling' as the relevant component.
     """
-    scene = analyze_equipment_scene(
+    scene = asyncio.run(analyze_equipment_scene(
         image_path=DEMO_IMAGE_PATH,
         problem="High vibration after yesterday's coupling replacement.",
-    )
+    ))
 
     assert scene.relevant_component is not None, "relevant_component should not be None"
     assert "coupling" in scene.relevant_component.lower(), (
@@ -63,10 +64,10 @@ def test_no_visual_diagnosis():
     The vision system must NOT declare the coupling is misaligned
     from the photo alone without measurements.
     """
-    scene = analyze_equipment_scene(
+    scene = asyncio.run(analyze_equipment_scene(
         image_path=DEMO_IMAGE_PATH,
         problem="High vibration after yesterday's coupling replacement.",
-    )
+    ))
 
     reason_lower = (scene.relevance_reason or "").lower()
     assert "coupling is misaligned" not in reason_lower, (
@@ -86,10 +87,10 @@ def test_sam_segmentation_response():
     SAM segmentation of 'flexible coupling' must return status='completed',
     a valid bounding box, and an SVG mask.
     """
-    seg = segment_component(
+    seg = asyncio.run(segment_component(
         image_path=DEMO_IMAGE_PATH,
         concept="flexible coupling",
-    )
+    ))
 
     assert seg.status == "completed", f"Expected completed status, got: {seg.status}"
     assert seg.box is not None, "Bounding box must be present"
@@ -107,10 +108,10 @@ def test_sam_empty_result_handling():
     When given an unrecognized or non-existent concept, SAM must return
     status='not_found' with null box/mask without crashing.
     """
-    seg = segment_component(
+    seg = asyncio.run(segment_component(
         image_path=DEMO_IMAGE_PATH,
         concept="turbocharger intercooler",
-    )
+    ))
 
     assert seg.status == "not_found", f"Expected status='not_found', got {seg.status}"
     assert seg.box is None, "Box should be None for not_found"
@@ -201,6 +202,16 @@ def test_vision_analyze_endpoint():
     assert len(graph_res.json()["nodes"]) > 0
 
 
+def test_vision_analyze_rejects_unsupported_content_type():
+    response = client.post(
+        "/api/vision/analyze",
+        files={"image": ("image.gif", b"not an image", "image/gif")},
+    )
+
+    assert response.status_code == 400
+    assert response.json()["detail"] == "Unsupported image type"
+
+
 # ──────────────────────────────────────────────────────────
 # Test G — Revision Diff
 # ──────────────────────────────────────────────────────────
@@ -216,4 +227,3 @@ def test_revision_diff():
     c = offset_changes[0]
     assert "0.15" in c["old"]
     assert "0.08" in c["new"]
-

@@ -131,7 +131,7 @@ export interface InvestigationGraph {
 
 export interface VisionAnalysisResponse {
   investigation_id?: string | null;
-  image_url: string;
+  image_url: string | null;
   scene_analysis: SceneAnalysis;
   segmentation: SegmentationResult;
   all_segmentations: SegmentationResult[];
@@ -282,9 +282,9 @@ export interface InvestigationResponse {
 }
 
 export const API_BASE_URL =
-  (typeof process !== "undefined" && process.env?.["VITE_API_URL"]) ||
-  (typeof import.meta !== "undefined" && import.meta.env?.["VITE_API_URL"]) ||
-  "http://localhost:8000";
+  (typeof import.meta !== "undefined" &&
+    import.meta.env["VITE_API_URL"] ||
+  "http://localhost:8787");
 
 export async function checkHealth(): Promise<{ status: string; service: string }> {
   const res = await fetch(`${API_BASE_URL}/api/health`);
@@ -294,21 +294,27 @@ export async function checkHealth(): Promise<{ status: string; service: string }
   return res.json();
 }
 
-export async function createInvestigation(problem: string): Promise<InvestigationResponse> {
-  const res = await fetch(`${API_BASE_URL}/api/investigations`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ problem }),
-  });
+export async function createInvestigation(problem: string) {
+  const response = await fetch(
+    `${API_BASE_URL}/api/investigations`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ problem }),
+    }
+  );
 
-  if (!res.ok) {
-    const errorText = await res.text();
-    throw new Error(`Investigation failed (${res.status}): ${errorText}`);
+  if (!response.ok) {
+    const errorText = await response.text();
+
+    throw new Error(
+      `Investigation failed (${response.status}): ${errorText}`
+    );
   }
 
-  return res.json();
+  return response.json();
 }
 
 export async function getInvestigation(investigationId: string): Promise<InvestigationResponse> {

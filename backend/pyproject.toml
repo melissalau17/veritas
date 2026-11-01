@@ -1,0 +1,23 @@
+[project]
+name = "verimaint"
+version = "0.1.0"
+requires-python = ">=3.13"
+
+dependencies = [
+    "fastapi",
+    "httpx",
+    "pydantic",
+    "python-multipart",
+]
+
+[dependency-groups]
+dev = [
+    "workers-py",
+    "workers-runtime-sdk",
+    "python-dotenv",
+    "pytest",
+]
+
+server = [
+    "uvicorn",
+]
