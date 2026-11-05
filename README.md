@@ -12,7 +12,17 @@
 [![Benchmark](https://img.shields.io/badge/Verification_Benchmark-20%2F20_Passed-brightgreen.svg)](#evaluation-benchmark)
 
 ---
+## 🚀 Live Demo
 
+Try Veritas:
+https://melissalau17-veritas-frontend.melissalau17300.workers.dev/
+
+Backend API:
+https://veritas-api.melissalau17300.workers.dev/
+
+Veritas is deployed on Cloudflare Workers, with the frontend and FastAPI backend running as separate services.
+
+--
 ## The Problem
 
 When industrial equipment behaves abnormally, the evidence engineers need often already exists. However, it is fragmented across:
